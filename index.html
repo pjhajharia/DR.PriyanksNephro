@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Dr. Priyanka Jhajharia · Nephrologist · Mumbai</title>
-  <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Quicksand', sans-serif;
-      background: #fff0f5;  /* light baby pink */
+      background: #fff0f5;
       color: #4a3f35;
       line-height: 1.5;
       scroll-behavior: smooth;
@@ -30,7 +28,7 @@
       color: transparent; text-shadow: 0 4px 12px rgba(30,111,159,0.25);
     }
     .container {
-      width: 100%; padding-right: 1.5rem; padding-left: 1.5rem;
+      width: 100%; padding-right: 1rem; padding-left: 1rem;
       margin-right: auto; margin-left: auto;
     }
     @media (min-width: 640px) { .container { max-width: 640px; } }
@@ -39,67 +37,73 @@
     @media (min-width: 1280px) { .container { max-width: 1280px; } }
     .card {
       background: rgba(255,255,255,0.8); backdrop-filter: blur(8px);
-      border-radius: 2.5rem; box-shadow: 0 20px 40px -20px rgba(30,111,159,0.15);
+      border-radius: 2rem; box-shadow: 0 20px 40px -20px rgba(30,111,159,0.15);
       border: 1px solid rgba(58,139,185,0.2); transition: transform 0.2s;
+      padding: 1.5rem;
     }
+    @media (min-width: 640px) { .card { border-radius: 2.5rem; padding: 2rem; } }
     .card:hover { transform: translateY(-5px); box-shadow: 0 30px 50px -20px var(--blue-soft); }
     .btn-peach {
-      background: var(--peach); border: none; color: #1e3a4d; padding: 0.8rem 2rem;
+      background: var(--peach); border: none; color: #1e3a4d; padding: 0.7rem 1.5rem;
       border-radius: 3rem; font-weight: 700; cursor: pointer; box-shadow: 0 8px 18px -8px var(--peach-dark);
-      display: inline-flex; align-items: center; gap: 0.5rem;
+      display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;
     }
-    .btn-mint { background: var(--mint); color: #1e3a4d; padding: 0.8rem 2rem; border-radius: 3rem; font-weight: 700; border: none; cursor: pointer; }
+    .btn-mint { background: var(--mint); color: #1e3a4d; padding: 0.7rem 1.5rem; border-radius: 3rem; font-weight: 700; border: none; cursor: pointer; }
     .btn-outline-blue {
       background: transparent; border: 2px solid var(--blue-accent); color: var(--blue-accent);
-      padding: 0.6rem 1.8rem; border-radius: 3rem; font-weight: 700; cursor: pointer;
+      padding: 0.5rem 1.2rem; border-radius: 3rem; font-weight: 700; cursor: pointer; font-size: 0.9rem;
     }
     .navbar {
       display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-      background: rgba(255,255,255,0.7); backdrop-filter: blur(15px); border-radius: 3rem;
-      padding: 0.8rem 1.5rem; margin: 1rem 1rem 0;
+      background: rgba(255,255,255,0.7); backdrop-filter: blur(15px); border-radius: 2rem;
+      padding: 0.6rem 1rem; margin: 0.8rem 0.8rem 0;
       box-shadow: 0 10px 30px -12px rgba(30,111,159,0.2);
     }
-    .logo { font-size: 1.8rem; font-weight: 800; }
-    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
-    .nav-links a { text-decoration: none; font-weight: 600; color: #2c5a73; }
+    .logo { font-size: 1.4rem; font-weight: 800; }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #2c5a73; font-size: 0.85rem; }
+    @media (min-width: 480px) { .logo { font-size: 1.8rem; } .nav-links a { font-size: 0.95rem; } }
     .hero {
       display: flex; flex-direction: column; align-items: center; text-align: center;
-      background: linear-gradient(145deg, #fdf2f8, #fffaf5); border-radius: 3rem;
-      margin: 1.5rem 1rem; padding: 2rem 1.5rem; box-shadow: 0 20px 40px -20px var(--blue-soft);
+      background: linear-gradient(145deg, #fdf2f8, #fffaf5); border-radius: 2rem;
+      margin: 1rem 0.8rem; padding: 1.8rem 1rem; box-shadow: 0 20px 40px -20px var(--blue-soft);
     }
-    .hero-text h1 { font-size: 2.8rem; }
-    .hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin: 1.5rem 0; }
-    .stat-number { font-size: 2rem; font-weight: 800; color: var(--blue-accent); }
-    .hero-image img { max-width: 240px; border-radius: 50%; box-shadow: 0 25px 30px -12px var(--blue-soft); border: 4px solid white; }
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .service-card { background: white; border-radius: 2rem; padding: 1.8rem 1rem; text-align: center; box-shadow: 0 15px 30px -15px #e6c9d4; }
-    .reviews-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; }
-    .review-card { background: white; border-radius: 2rem; padding: 1.8rem; box-shadow: 0 15px 30px -15px #e6c9d4; }
-    .avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(145deg,#b8d9f0,#a0c8e3); display: flex; align-items: center; justify-content: center; font-weight: bold; color:#1e3a4d; }
-    .stars-input { font-size: 2.5rem; color: #ffe0b5; cursor: pointer; }
+    .hero-text h1 { font-size: 2rem; }
+    .hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; }
+    .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--blue-accent); }
+    .hero-image img { max-width: 200px; width: 100%; border-radius: 50%; box-shadow: 0 25px 30px -12px var(--blue-soft); border: 4px solid white; }
+    @media (min-width: 640px) { .hero-text h1 { font-size: 2.8rem; } .hero-image img { max-width: 240px; } }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .service-card { background: white; border-radius: 1.5rem; padding: 1.2rem 0.8rem; text-align: center; box-shadow: 0 15px 30px -15px #e6c9d4; }
+    .service-card i { font-size: 2rem; }
+    .reviews-container { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 640px) { .reviews-container { grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); } }
+    .review-card { background: white; border-radius: 1.5rem; padding: 1.5rem; box-shadow: 0 15px 30px -15px #e6c9d4; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(145deg,#b8d9f0,#a0c8e3); display: flex; align-items: center; justify-content: center; font-weight: bold; color:#1e3a4d; }
+    .stars-input { font-size: 2rem; color: #ffe0b5; cursor: pointer; }
     .stars-input i.active, .stars-input i:hover { color: var(--gold); }
-    .form-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width:768px){ .form-grid { grid-template-columns: 1fr 1fr; } }
-    .form-box { background: white; border-radius: 2.5rem; padding: 2rem; box-shadow: 0 20px 40px -20px var(--blue-soft); }
-    input, textarea, select { width: 100%; padding: 1rem 1.5rem; margin-bottom: 1.2rem; border: 2px solid #fad1e0; border-radius: 3rem; background: #fffcfd; }
-    .btn-submit { background: var(--mint); border: none; color: #1e3a4d; padding: 1rem 2rem; border-radius: 3rem; font-weight: 700; width: 100%; cursor: pointer; }
-    .map-container { border-radius: 2rem; overflow: hidden; border: 2px solid var(--blue-soft); height: 220px; }
+    .form-box { background: white; border-radius: 2rem; padding: 1.5rem; box-shadow: 0 20px 40px -20px var(--blue-soft); }
+    input, textarea, select { width: 100%; padding: 0.9rem 1.2rem; margin-bottom: 1rem; border: 2px solid #fad1e0; border-radius: 2rem; background: #fffcfd; font-size: 1rem; }
+    .btn-submit { background: var(--mint); border: none; color: #1e3a4d; padding: 0.9rem 1.5rem; border-radius: 3rem; font-weight: 700; width: 100%; cursor: pointer; }
+    .map-container { border-radius: 1.5rem; overflow: hidden; border: 2px solid var(--blue-soft); height: 200px; }
     .modal {
       display: none; position: fixed; top:0; left:0; width:100%; height:100%;
       background: rgba(0,0,0,0.2); backdrop-filter: blur(6px); align-items: center; justify-content: center; z-index: 1000;
     }
-    .modal-content { background: white; border-radius: 3rem; padding: 2rem; max-width: 400px; width:90%; border:2px solid var(--blue-accent); }
-    .close { float: right; font-size: 2rem; color: var(--blue-accent); cursor: pointer; }
-    footer { background: #ffe4ed; border-radius: 3rem 3rem 0 0; padding: 2rem; text-align: center; margin-top: 4rem; }
-    .section-head { font-size: 2.2rem; font-weight: 700; margin: 2.5rem 0 1rem; border-left: 8px solid var(--blue-accent); padding-left: 1.2rem; }
-    .flex-wrap { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .modal-content { background: white; border-radius: 2rem; padding: 1.5rem; max-width: 380px; width:90%; border:2px solid var(--blue-accent); }
+    .close { float: right; font-size: 1.8rem; color: var(--blue-accent); cursor: pointer; }
+    footer { background: #ffe4ed; border-radius: 2rem 2rem 0 0; padding: 1.5rem; text-align: center; margin-top: 3rem; }
+    .section-head { font-size: 1.8rem; font-weight: 700; margin: 2rem 0 1rem; border-left: 6px solid var(--blue-accent); padding-left: 0.8rem; }
+    @media (min-width: 640px) { .section-head { font-size: 2.2rem; } }
+    .flex-wrap { display: flex; flex-wrap: wrap; gap: 1rem; }
     .hidden { display: none !important; }
     .text-center { text-align: center; }
   </style>
 </head>
 <body>
 
-<!-- Navigation -->
 <div class="navbar">
   <div class="logo"><span class="glossy-name">Dr. Priyanka Jhajharia</span></div>
   <div class="nav-links">
@@ -108,25 +112,24 @@
     <a href="#services">Services</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
-    <button class="btn-outline-blue" id="otpLoginBtn"><i class="fa-regular fa-message"></i> Login / Verify</button>
-    <span id="userDisplay" style="font-weight:600; color:var(--blue-accent);"></span>
+    <button class="btn-outline-blue" id="otpLoginBtn"><i class="fa-regular fa-message"></i> Login</button>
+    <span id="userDisplay" style="font-weight:600; color:var(--blue-accent); font-size:0.9rem;"></span>
   </div>
 </div>
 
-<!-- Hero -->
 <div class="hero">
   <div class="hero-text">
     <h1><span class="glossy-name">Dr. Priyanka Jhajharia</span></h1>
-    <div style="font-size:1.4rem; font-weight:600; color:var(--blue-accent);">MBBS, MD (Medicine), DrNB Nephrology</div>
+    <div style="font-size:1.2rem; font-weight:600; color:var(--blue-accent);">MBBS, MD, DrNB Nephrology</div>
     <div class="hero-sub">compassionate kidney care · transplant specialist</div>
     <div class="hero-stats">
-      <div><span class="stat-number">246+</span> <br>transplants</div>
-      <div><span class="stat-number">8+ yrs</span> <br>experience</div>
-      <div><span class="stat-number">4.96 ★</span> <br>rating</div>
+      <div><span class="stat-number">246+</span><br>transplants</div>
+      <div><span class="stat-number">8+ yrs</span><br>experience</div>
+      <div><span class="stat-number">4.96 ★</span><br>rating</div>
     </div>
-    <div style="margin-top:1.5rem;">
+    <div style="margin-top:1.5rem; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center;">
       <a href="#contact" class="btn-peach"><i class="fa-regular fa-calendar"></i> Book consultation</a>
-      <a href="https://www.linkedin.com/in/priyanka-jhajharia-3a7" target="_blank" class="btn-outline-blue" style="margin-left:0.8rem;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://www.linkedin.com/in/priyanka-jhajharia-3a7" target="_blank" class="btn-outline-blue"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
   </div>
   <div class="hero-image">
@@ -135,70 +138,63 @@
 </div>
 
 <div class="container">
-  <!-- About -->
   <h2 class="section-head" id="about">👩‍⚕️ About Dr. Priyanka</h2>
-  <div class="card" style="padding:2rem;">
-    <p style="font-size:1.2rem;"><strong>MD Medicine, DrNB Nephrology</strong> (completed Dec 2025) with comprehensive exposure to advanced nephrology care at <strong>Army Hospital (Research & Referral), New Delhi</strong>. Currently seeking full‑time clinical nephrology position in Mumbai. Trained in glomerular disease, acute PD, ABOi & SWAP renal transplantation, CRRT.</p>
-    <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:1.5rem;">
-      <div><i class="fas fa-trophy" style="color:var(--gold);"></i> 1st Prize poster – Kidney Transplant Update 2024</div>
-      <div><i class="fas fa-trophy" style="color:var(--gold);"></i> 2nd Prize quiz – DNS annual update 2024</div>
-      <div><i class="fas fa-globe"></i> Member ISN, ERA, Indian Society of Nephrology</div>
+  <div class="card">
+    <p style="font-size:1.1rem;"><strong>MD Medicine, DrNB Nephrology</strong> (completed Dec 2025) with comprehensive exposure to advanced nephrology care at <strong>Army Hospital (Research & Referral), New Delhi</strong>. Currently seeking full‑time clinical nephrology position in Mumbai. Trained in glomerular disease, acute PD, ABOi & SWAP renal transplantation, CRRT.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.5rem;">
+      <div><i class="fas fa-trophy" style="color:var(--gold);"></i> 1st Prize poster 2024</div>
+      <div><i class="fas fa-trophy" style="color:var(--gold);"></i> 2nd Prize quiz 2024</div>
+      <div><i class="fas fa-globe"></i> ISN, ERA, Indian Society of Nephrology</div>
     </div>
   </div>
 
-  <!-- Services -->
   <h2 class="section-head" id="services">🫀 Nephrology Services</h2>
   <div class="service-grid">
     <div class="service-card"><i class="fas fa-dialysis"></i><h3>Dialysis</h3><p>HD, PD, CRRT</p></div>
-    <div class="service-card"><i class="fas fa-heart-circle-check"></i><h3>Transplant care</h3><p>ABOi, swap, cadaveric</p></div>
+    <div class="service-card"><i class="fas fa-heart-circle-check"></i><h3>Transplant</h3><p>ABOi, swap</p></div>
     <div class="service-card"><i class="fas fa-hand-holding-heart"></i><h3>CKD / AKI</h3><p>management</p></div>
-    <div class="service-card"><i class="fas fa-microscope"></i><h3>Glomerular disease</h3><p>expert diagnosis</p></div>
-    <div class="service-card"><i class="fas fa-syringe"></i><h3>Vascular access</h3><p>AVF, CVC</p></div>
-    <div class="service-card"><i class="fas fa-flask"></i><h3>Electrolyte</h3><p>acid‑base balance</p></div>
+    <div class="service-card"><i class="fas fa-microscope"></i><h3>Glomerular</h3><p>expert diagnosis</p></div>
+    <div class="service-card"><i class="fas fa-syringe"></i><h3>Vascular</h3><p>AVF, CVC</p></div>
+    <div class="service-card"><i class="fas fa-flask"></i><h3>Electrolyte</h3><p>acid‑base</p></div>
   </div>
 
-  <!-- Experience & Education -->
   <h2 class="section-head" id="experience">📚 Education & Training</h2>
   <div class="flex-wrap">
-    <div class="card" style="flex:2; min-width:260px; padding:1.8rem;">
-      <h3><i class="fas fa-graduation-cap" style="color:var(--blue-accent);"></i> Academic</h3>
-      <ul style="list-style:none; margin-top:1rem;">
+    <div class="card" style="flex:2; min-width:240px;">
+      <h3><i class="fas fa-graduation-cap"></i> Academic</h3>
+      <ul style="list-style:none; margin-top:0.8rem;">
         <li><strong>MBBS</strong> – SMS Medical College, Jaipur (2016)</li>
         <li><strong>MD Medicine</strong> – VMMC & Safdarjung Hospital, New Delhi (2021)</li>
         <li><strong>DrNB Nephrology</strong> – Army Hospital (R&R), Delhi (Dec 2025)</li>
       </ul>
     </div>
-    <div class="card" style="flex:3; padding:1.8rem;">
-      <h3><i class="fas fa-briefcase" style="color:var(--blue-accent);"></i> Clinical</h3>
+    <div class="card" style="flex:3;">
+      <h3><i class="fas fa-briefcase"></i> Clinical</h3>
       <ul>
         <li>Senior Resident Nephrology – SJH New Delhi (2022)</li>
-        <li>Junior Resident Emergency Medicine – AIIMS New Delhi (2017)</li>
-        <li>Involved in <strong>246+ renal transplants</strong> (ABOc, ABOi, cadaveric, swap)</li>
+        <li>Junior Resident Emergency – AIIMS New Delhi (2017)</li>
+        <li>Involved in <strong>246+ renal transplants</strong></li>
         <li>Rejection, BK virus, CMV management</li>
         <li>Research: kinetics of DSA post‑transplant</li>
       </ul>
     </div>
   </div>
-  <div class="card" style="padding:2rem; margin-top:2rem;">
-    <h3><i class="fa-regular fa-newspaper"></i> Publications & presentations</h3>
-    <p>📄 KI Reports (Feb 2024): “Postpartum acute cortical necrosis – a retrospective analysis”<br>
-    🎤 Poster at WCN 2025, ISN 2025, AVATAR 2024, DNS conferences.</p>
+  <div class="card" style="margin-top:1.5rem;">
+    <h3><i class="fa-regular fa-newspaper"></i> Publications</h3>
+    <p>📄 KI Reports (Feb 2024): “Postpartum acute cortical necrosis”<br>🎤 Poster at WCN 2025, ISN 2025, AVATAR 2024, DNS conferences.</p>
   </div>
 
-  <!-- Reviews (with submission after login) -->
   <h2 class="section-head"><i class="fab fa-google" style="color:var(--blue-accent);"></i> Patient Reviews</h2>
   <div class="reviews-container" id="reviewsContainer">
-    <!-- Static examples; new reviews appended dynamically -->
-    <div class="review-card"><div style="display:flex; gap:1rem;"><div class="avatar">AK</div><div><strong>Anjali K.</strong><br><i class="fab fa-google"></i></div></div><div class="stars">★★★★★</div><p>“Dr. Priyanka explained everything with patience.”</p></div>
-    <div class="review-card"><div style="display:flex; gap:1rem;"><div class="avatar">RS</div><div><strong>Rahul S.</strong><br><i class="fab fa-google"></i></div></div><div class="stars">★★★★★</div><p>“Managed my CKD excellently.”</p></div>
+    <div class="review-card"><div style="display:flex; gap:0.8rem;"><div class="avatar">AK</div><div><strong>Anjali K.</strong><br><i class="fab fa-google"></i></div></div><div class="stars">★★★★★</div><p>“Dr. Priyanka explained everything with patience.”</p></div>
+    <div class="review-card"><div style="display:flex; gap:0.8rem;"><div class="avatar">RS</div><div><strong>Rahul S.</strong><br><i class="fab fa-google"></i></div></div><div class="stars">★★★★★</div><p>“Managed my CKD excellently.”</p></div>
   </div>
-  <!-- Write review (requires login) -->
-  <div class="card" style="padding:2rem; margin:2rem 0;" id="reviewFormCard">
+  <div class="card" style="margin:1.5rem 0;" id="reviewFormCard">
     <h3>✍️ Write a review</h3>
     <div id="reviewLocked"><p>🔐 Please login to submit a review.</p><button class="btn-peach" id="loginForReview">Login / Verify</button></div>
     <div id="reviewUnlocked" class="hidden">
-      <input type="text" id="reviewName" placeholder="Your name" required>
-      <div class="stars-input" id="reviewStarsWidget" style="font-size:2rem;">
+      <input type="text" id="reviewName" placeholder="Your name">
+      <div class="stars-input" id="reviewStarsWidget" style="font-size:1.8rem;">
         <i class="fa-regular fa-star" data-value="1"></i><i class="fa-regular fa-star" data-value="2"></i><i class="fa-regular fa-star" data-value="3"></i><i class="fa-regular fa-star" data-value="4"></i><i class="fa-regular fa-star" data-value="5"></i>
       </div>
       <textarea id="reviewText" placeholder="Your experience..." rows="3"></textarea>
@@ -207,52 +203,50 @@
     </div>
   </div>
 
-  <!-- Rating widget (simple) -->
-  <div class="rating-widget" style="background:white; border-radius:3rem; padding:2rem; margin:2rem 0;">
+  <div class="card" style="margin:1.5rem 0;">
     <h3>⭐ Quick rating</h3>
     <div class="stars-input" id="quickStarWidget"><i class="fa-regular fa-star" data-value="1"></i><i class="fa-regular fa-star" data-value="2"></i><i class="fa-regular fa-star" data-value="3"></i><i class="fa-regular fa-star" data-value="4"></i><i class="fa-regular fa-star" data-value="5"></i></div>
     <p id="quickRatingMsg"></p>
   </div>
 
-  <!-- Contact & Map -->
   <h2 class="section-head" id="contact">📍 Sushrut Hospital & Contact</h2>
   <div class="form-grid">
     <div class="form-box">
-      <h3><i class="fa-regular fa-hospital"></i> Clinic / Hospital</h3>
-      <p><i class="fas fa-map-pin"></i> <strong>Sushrut Hospital</strong><br>365, Sant Vershaw Kakkaya Marg, Swastik Park, Chembur (East), Mumbai, Maharashtra 400071</p>
+      <h3><i class="fa-regular fa-hospital"></i> Clinic</h3>
+      <p><i class="fas fa-map-pin"></i> <strong>Sushrut Hospital</strong><br>365, Sant Vershaw Kakkaya Marg, Swastik Park, Chembur (East), Mumbai 400071</p>
       <p><i class="fas fa-phone-alt"></i> +91 95717 57296</p>
       <p><i class="fas fa-envelope"></i> jhajhariap5@gmail.com</p>
       <div class="map-container">
-        <iframe title="Sushrut Hospital" width="100%" height="220" style="border:0;" loading="lazy" allowfullscreen
+        <iframe title="Sushrut Hospital" width="100%" height="200" style="border:0;" loading="lazy" allowfullscreen
           src="https://www.google.com/maps?q=Sushrut+Hospital+Chembur+Mumbai&output=embed"></iframe>
       </div>
-      <p><i class="fa-regular fa-clock"></i> Mon–Sat: 9am–1pm · 5pm–8pm (two slots)</p>
+      <p><i class="fa-regular fa-clock"></i> Mon–Sat: 9am–1pm · 5pm–8pm</p>
     </div>
     <div class="form-box">
       <h3><i class="fa-regular fa-calendar-check"></i> Book Appointment</h3>
       <div id="bookingLocked"><p>🔐 Please verify to book.</p><button class="btn-peach" id="loginForBooking">Verify now</button></div>
       <div id="bookingUnlocked" class="hidden">
-        <form id="appointmentForm" onsubmit="return false;">
-          <input type="text" id="aptName" placeholder="Full name" required>
-          <input type="email" id="aptEmail" placeholder="Email" required>
-          <input type="tel" id="aptPhone" placeholder="Phone" required>
-          <input type="date" id="aptDate" required>
-          <select id="aptSlot" required>
+        <form onsubmit="return false;">
+          <input type="text" id="aptName" placeholder="Full name">
+          <input type="email" id="aptEmail" placeholder="Email">
+          <input type="tel" id="aptPhone" placeholder="Phone">
+          <input type="date" id="aptDate">
+          <select id="aptSlot">
             <option value="">Select slot</option>
-            <option>Afternoon (2:00 PM – 4:00 PM)</option>
-            <option>Evening (6:00 PM – 8:00 PM)</option>
+            <option>Afternoon (2–4 PM)</option>
+            <option>Evening (6–8 PM)</option>
           </select>
           <textarea id="aptReason" placeholder="Reason (optional)" rows="2"></textarea>
-          <button type="submit" class="btn-submit" onclick="submitAppointment()">Request appointment</button>
+          <button class="btn-submit" onclick="submitAppointment()">Request appointment</button>
         </form>
         <p id="aptMsg" class="text-center"></p>
       </div>
       <hr style="margin:1.5rem 0; border-top:2px dashed var(--blue-soft);">
       <h3><i class="fa-regular fa-message"></i> Quick query</h3>
       <form onsubmit="return false;">
-        <input type="text" id="queryName" placeholder="Name" required>
-        <input type="email" id="queryEmail" placeholder="Email" required>
-        <textarea id="queryText" placeholder="Your question..." rows="3" required></textarea>
+        <input type="text" id="queryName" placeholder="Name">
+        <input type="email" id="queryEmail" placeholder="Email">
+        <textarea id="queryText" placeholder="Your question..." rows="3"></textarea>
         <button class="btn-submit" onclick="submitQuery()">Send query</button>
       </form>
       <p id="queryMsg"></p>
@@ -260,20 +254,19 @@
   </div>
 </div>
 
-<!-- OTP Modal (EmailJS based) -->
 <div class="modal" id="otpModal">
   <div class="modal-content">
     <span class="close" onclick="closeOtpModal()">&times;</span>
     <h2 style="color:var(--blue-accent);"><i class="fa-regular fa-envelope"></i> Verify with OTP</h2>
     <p>We'll send a code to your email.</p>
-    <input type="email" id="otpEmail" placeholder="your@email.com" required>
+    <input type="email" id="otpEmail" placeholder="your@email.com">
     <div id="otpControls"><button class="btn-peach" onclick="sendOtp()">Send OTP</button></div>
     <div id="otpVerifySection" class="hidden">
       <input type="text" id="otpCode" placeholder="Enter 6-digit OTP" maxlength="6">
       <button class="btn-mint" onclick="verifyOtp()">Verify & Login</button>
     </div>
     <p id="otpMessage" style="margin-top:1rem;"></p>
-    <p style="font-size:0.8rem;">⭐ Real email delivery via EmailJS. No database.</p>
+    <p style="font-size:0.8rem;">⭐ Real email delivery via EmailJS.</p>
   </div>
 </div>
 
@@ -282,13 +275,11 @@
 </footer>
 
 <script>
-  // ---------- EmailJS Initialization (REPLACE WITH YOUR CREDENTIALS) ----------
   (function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Get from EmailJS dashboard
+    emailjs.init("YOUR_PUBLIC_KEY");
   })();
 
-  // ---------- Global state ----------
-  let currentUser = null; // { email }
+  let currentUser = null;
   let generatedOtp = null;
   const modal = document.getElementById('otpModal');
   const userDisplay = document.getElementById('userDisplay');
@@ -297,7 +288,6 @@
   const reviewLocked = document.getElementById('reviewLocked');
   const reviewUnlocked = document.getElementById('reviewUnlocked');
 
-  // Check session storage for existing login
   if (sessionStorage.getItem('userEmail')) {
     currentUser = { email: sessionStorage.getItem('userEmail') };
     userDisplay.textContent = `✅ ${currentUser.email}`;
@@ -307,7 +297,6 @@
     reviewUnlocked.classList.remove('hidden');
   }
 
-  // OTP Modal
   window.openOtpModal = () => { modal.style.display = 'flex'; };
   window.closeOtpModal = () => { 
     modal.style.display = 'none'; 
@@ -320,9 +309,7 @@
   window.sendOtp = async function() {
     const email = document.getElementById('otpEmail').value.trim();
     if (!email) { document.getElementById('otpMessage').textContent = 'Email required'; return; }
-    // Generate 6-digit OTP
     generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    // Send via EmailJS
     try {
       await emailjs.send("YOUR_SERVICE_ID", "YOUR_OTP_TEMPLATE_ID", {
         to_email: email,
@@ -334,7 +321,6 @@
       document.getElementById('otpVerifySection').classList.remove('hidden');
     } catch (error) {
       document.getElementById('otpMessage').textContent = 'Failed to send OTP. Check EmailJS setup.';
-      console.error(error);
     }
   };
 
@@ -355,7 +341,6 @@
     }
   };
 
-  // Appointment submission
   window.submitAppointment = async function() {
     if (!currentUser) { alert('Please login first'); return; }
     const name = document.getElementById('aptName').value;
@@ -375,13 +360,12 @@
         reason: reason,
         user_email: currentUser.email
       });
-      document.getElementById('aptMsg').textContent = '✅ Appointment request sent! We will call you.';
+      document.getElementById('aptMsg').textContent = '✅ Appointment request sent!';
     } catch(e) {
-      document.getElementById('aptMsg').textContent = '❌ Error sending. Please try again.';
+      document.getElementById('aptMsg').textContent = '❌ Error sending.';
     }
   };
 
-  // Query submission
   window.submitQuery = async function() {
     const name = document.getElementById('queryName').value;
     const email = document.getElementById('queryEmail').value;
@@ -394,15 +378,14 @@
         message: text,
         user_email: currentUser ? currentUser.email : email
       });
-      document.getElementById('queryMsg').textContent = '✅ Query sent! We will reply soon.';
+      document.getElementById('queryMsg').textContent = '✅ Query sent!';
     } catch(e) {
-      document.getElementById('queryMsg').textContent = '❌ Error. Please email directly.';
+      document.getElementById('queryMsg').textContent = '❌ Error.';
     }
   };
 
-  // Review submission
   let reviewRating = 0;
-  (function setupReviewStars(){
+  (function(){
     const stars = document.querySelectorAll('#reviewStarsWidget i');
     stars.forEach(s => {
       s.addEventListener('click', () => {
@@ -426,14 +409,12 @@
         rating: reviewRating,
         review_text: text
       });
-      document.getElementById('reviewMsg').textContent = '✅ Review submitted! Thank you.';
-      // Optionally append to reviews display
+      document.getElementById('reviewMsg').textContent = '✅ Review submitted!';
     } catch(e) {
       document.getElementById('reviewMsg').textContent = '❌ Error.';
     }
   };
 
-  // Quick rating (optional)
   (function(){
     const stars = document.querySelectorAll('#quickStarWidget i');
     let qrating = 0;
@@ -451,7 +432,6 @@
     });
   })();
 
-  // Event listeners
   document.getElementById('otpLoginBtn').addEventListener('click', openOtpModal);
   document.getElementById('loginForBooking').addEventListener('click', openOtpModal);
   document.getElementById('loginForReview').addEventListener('click', openOtpModal);
